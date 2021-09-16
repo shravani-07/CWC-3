@@ -1,0 +1,17 @@
+import pandas as pd
+df = pd.read_json("/content/drive/MyDrive/Northern Trust/Copy of Stock List.json")
+import plotly.graph_objects as go
+fig = go.Figure(data = go.Ohlc(x=df['date'],
+                               open = df['open'],
+                               close = df['close'],
+                               low = df['low'],
+                               high = df['high']))
+fig.show()
+
+fig = go.Figure(data = go.Ohlc(x=df['date'],
+                               open = df['open'],
+                               close = df['close'],
+                               low = df['low'],
+                               high = df['high']))
+fig.update(layout_xaxis_rangeslider_visible=False)
+fig.show()
